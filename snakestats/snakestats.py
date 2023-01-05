@@ -32,13 +32,12 @@ def getMin(vals):
     return minNum
 
 
-def getFreq(vals):
+def getMode(vals):
     freq = 0
     length = len(vals)
     comp_list = [0] * length
     
     for val in vals:
-        val = math.floor(val)
         count = comp_list[val] + 1
         comp_list[val] = count
         
@@ -47,7 +46,25 @@ def getFreq(vals):
     else:
         max_val = max(comp_list)
         index = comp_list.index(max_val)
-        return index
+        return False, index
+
+
+# def getFreq(vals):
+#     freq = 0
+#     length = len(vals)
+#     comp_list = [0] * length
+    
+#     for val in vals:
+#         val = math.floor(val)
+#         count = comp_list[val] + 1
+#         comp_list[val] = count
+        
+#     if all(comp_list):
+#         return True
+#     else:
+#         max_val = max(comp_list)
+#         index = comp_list.index(max_val)
+#         return index
 
     
 def getMedian(vals):
